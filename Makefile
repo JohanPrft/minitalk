@@ -6,7 +6,7 @@
 #    By: jprofit <jprofit@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/15 10:10:32 by jprofit           #+#    #+#              #
-#    Updated: 2022/12/15 11:41:03 by jprofit          ###   ########.fr        #
+#    Updated: 2023/01/16 17:58:33 by jprofit          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -61,7 +61,7 @@ $(EXEC1):		$(OBJS1)
 $(EXEC2):		$(OBJS2)
 				$(CC) ${FLAGS} -L ${LIBDIR} -l${LIBSHORT} ${OBJS2} -o $(EXEC2)
 
-%.o:			%.c ${INCLUDES} Makefile
+%.o:			%.c ${INCLUDES} Makefile ${LIBFULL}
 				${CC} ${FLAGS} -c $< -o $@
 
 clean:
