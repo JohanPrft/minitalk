@@ -6,7 +6,7 @@
 #    By: jprofit <jprofit@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/15 10:10:32 by jprofit           #+#    #+#              #
-#    Updated: 2022/12/12 14:05:36 by jprofit          ###   ########.fr        #
+#    Updated: 2023/01/16 12:45:56 by jprofit          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -39,13 +39,16 @@ SRCSLST	= 	ft_lstnew.c		ft_lstadd_front.c	ft_lstsize.c				\
 SRCSPF	=	ft_putchar_err.c	ft_putstr_err.c		ft_putunbr_b.c 			\
 			ft_putnbr_err.c 	ft_putaddr.c		ft_printf.c
 
+SRCSGNL	=	get_next_line.c		get_next_line_utils.c
+
 SRCS	=	$(addprefix ft_ft/, ${SRCSFT})									\
 			$(addprefix ft_is/, ${SRCSIS})									\
 			$(addprefix ft_put/, ${SRCSPUT})								\
 			$(addprefix ft_str/, ${SRCSSTR})								\
 			$(addprefix ft_mem/, ${SRCSMEM})								\
 			$(addprefix ft_lst/, ${SRCSLST})								\
-			$(addprefix ft_printf/, ${SRCSPF})
+			$(addprefix ft_printf/, ${SRCSPF})								\
+			$(addprefix ft_gnl/, ${SRCSGNL})
 
 OBJS	=	$(SRCS:.c=.o)
 

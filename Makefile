@@ -48,13 +48,17 @@ EXEC2	=	client
 # **************************************************************************** #
 # RULES
 
-all: 			makelib ${NAME}
+all: 			${NAME}
 
-makelib:
+libft:
 				@$(MAKE) -C $(LIBDIR)
 
-${NAME}:		${OBJS1} $(OBJS2)
+${NAME}:		libft $(EXEC1) $(EXEC2)
+
+$(EXEC1):		$(OBJS1)
 				$(CC) ${FLAGS} -L ${LIBDIR} -l${LIBSHORT} ${OBJS1} -o $(EXEC1)
+
+$(EXEC2):		$(OBJS2)
 				$(CC) ${FLAGS} -L ${LIBDIR} -l${LIBSHORT} ${OBJS2} -o $(EXEC2)
 
 %.o:			%.c ${INCLUDES} Makefile
@@ -71,4 +75,8 @@ fclean:			clean
 re:				fclean
 				$(MAKE) all
 
-.PHONY:			all makelib clean fclean re
+debug:
+				echo $(EXEC1) $(OBJS1)
+				echo $(EXEC2) $(OBJS2)
+
+.PHONY:			all libft clean fclean re

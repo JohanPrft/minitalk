@@ -6,13 +6,16 @@
 /*   By: jprofit <jprofit@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/08 17:04:39 by jprofit           #+#    #+#             */
-/*   Updated: 2022/12/14 09:28:30 by jprofit          ###   ########.fr       */
+/*   Updated: 2023/01/16 12:53:27 by jprofit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 
 # define LIBFT_H
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 128
+# endif
 # include <stdlib.h>
 # include <stdarg.h>
 # include <unistd.h>
@@ -78,5 +81,11 @@ ssize_t	ft_putnbr_err(long nbr, ssize_t *len);
 ssize_t	ft_putunbr_b(unsigned long nb, char *base, ssize_t *len);
 ssize_t	ft_putaddr(unsigned long l, char *str, ssize_t *len);
 int		ft_printf(const char *s, ...);
+
+// GNL
+
+char	*ft_strjoin_sec(char *s1, char const *s2);
+void	ft_bzero(void *s, size_t n);
+char	*get_next_line(int fd);
 
 #endif
